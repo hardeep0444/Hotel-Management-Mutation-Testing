@@ -116,10 +116,23 @@ public class AppTest
         InputStream mockInputStream = new ByteArrayInputStream("John\n1234567890\nMale\nJane\n9876543210\nFemale\n".getBytes());
         Scanner mockScanner = new Scanner(mockInputStream);
         hotel.CustDetails(1, 0, mockScanner);
+        assertNotNull(Hotel.hotel_ob.luxury_doublerrom[0]);
 
-        // Perform assertions based on the expected behavior
-        assertNotNull(Hotel.hotel_ob.luxury_doublerrom[0]); // Assuming the room is booked
-        // Add more assertions if needed
+        InputStream mockInputStream2 = new ByteArrayInputStream("John\n1234567890\nMale\nJane\n9876543210\nFemale\n".getBytes());
+        Scanner mockScanner2 = new Scanner(mockInputStream2);
+        hotel.CustDetails(2, 1, mockScanner2);
+        assertNotNull(Hotel.hotel_ob.deluxe_doublerrom[1]);
+
+        InputStream mockInputStream3 = new ByteArrayInputStream("John\n1234567890\nMale\n\n\n".getBytes());
+        Scanner mockScanner3 = new Scanner(mockInputStream3);
+        hotel.CustDetails(3, 1, mockScanner3);
+        assertNotNull(Hotel.hotel_ob.luxury_singleerrom[1]);
+
+        InputStream mockInputStream4 = new ByteArrayInputStream("John\n1234567890\nMale\n\n\n".getBytes());
+        Scanner mockScanner4 = new Scanner(mockInputStream4);
+        hotel.CustDetails(4, 1, mockScanner4);
+        assertNotNull(Hotel.hotel_ob.deluxe_singleerrom[1]);
     }
+
 
 }

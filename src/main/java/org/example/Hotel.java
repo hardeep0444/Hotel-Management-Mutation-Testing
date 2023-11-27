@@ -52,7 +52,7 @@ static void CustDetails(int i, int rn, Scanner scanner) {
 }
 
 
-    static void bookroom(int i) {
+    static void bookroom(int i, Scanner bookRoomSc) {
         int j;
         int rn;
         System.out.println("\nChoose room number from : ");
@@ -65,7 +65,7 @@ static void CustDetails(int i, int rn, Scanner scanner) {
                 }
                 System.out.print("\nEnter room number: ");
                 try {
-                    rn = sc.nextInt();
+                    rn = bookRoomSc.nextInt();
                     rn--;
                     if (hotel_ob.luxury_doublerrom[rn] != null)
                         throw new NotAvailable();
@@ -83,7 +83,7 @@ static void CustDetails(int i, int rn, Scanner scanner) {
                 }
                 System.out.print("\nEnter room number: ");
                 try {
-                    rn = sc.nextInt();
+                    rn = bookRoomSc.nextInt();
                     rn = rn - 11;
                     if (hotel_ob.deluxe_doublerrom[rn] != null)
                         throw new NotAvailable();
@@ -101,7 +101,7 @@ static void CustDetails(int i, int rn, Scanner scanner) {
                 }
                 System.out.print("\nEnter room number: ");
                 try {
-                    rn = sc.nextInt();
+                    rn = bookRoomSc.nextInt();
                     rn = rn - 31;
                     if (hotel_ob.luxury_singleerrom[rn] != null)
                         throw new NotAvailable();
@@ -119,7 +119,7 @@ static void CustDetails(int i, int rn, Scanner scanner) {
                 }
                 System.out.print("\nEnter room number: ");
                 try {
-                    rn = sc.nextInt();
+                    rn = bookRoomSc.nextInt();
                     rn = rn - 41;
                     if (hotel_ob.deluxe_singleerrom[rn] != null)
                         throw new NotAvailable();
